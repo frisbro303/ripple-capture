@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --sidebar-bg: #f7f7f8;
+      --ink: #1c1e21;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --hover-bg: #f3f4f6;
+      --accent: #3b5bfd;
+      --again: #dc2626;
+      --radius-sm: 6px;
+      --radius-md: 8px;
+    }
+
+    body {
+      width: 320px;
+      margin: 0;
+      padding: 1rem;
+      font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.5rem 0.65rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.9rem;
+      resize: none;
+    }
+
+    textarea:focus {
+      outline: none;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    button {
+      flex: 1;
+      padding: 0.5rem 1rem;
+      border: 1px solid transparent;
+      border-radius: var(--radius-md);
+      background: none;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #accept {
+      color: var(--accent);
+    }
+
+    #accept:hover {
+      filter: brightness(0.85);
+    }
+
+    #reject {
+      color: var(--again);
+    }
+
+    #reject:hover {
+      filter: brightness(0.85);
+    }
+
+    #status {
+      color: var(--muted);
+      text-align: center;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="status">Loading...</div>
+  <div id="editor" style="display:none">
+    <label>Question</label>
+    <textarea id="question" rows="2"></textarea>
+    <label>Answer</label>
+    <textarea id="answer" rows="2"></textarea>
+    <div class="actions">
+      <button id="accept">Accept</button>
+      <button id="reject">Reject</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
